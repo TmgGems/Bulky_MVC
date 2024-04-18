@@ -62,6 +62,11 @@ namespace BulkyWeb.Controllers
 
         public IActionResult Edit(Category obj)
         {
+
+            if(obj.Name  == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("", "Name and DisplayOrder cannot be matched .");
+            }
             if(ModelState.IsValid)
             {
                 _db.Update(obj);
