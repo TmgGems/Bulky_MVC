@@ -1,7 +1,7 @@
-﻿using BulkyWeb.Models;
+﻿using BulkyWebRazor_Temp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkyWeb.Data
+namespace BulkyWebRazor_Temp.Data
 {
     public class ApplicationDbContext :DbContext
     {
