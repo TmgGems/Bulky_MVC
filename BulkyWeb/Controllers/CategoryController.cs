@@ -40,5 +40,40 @@ namespace BulkyWeb.Controllers
             return View();
 
         }
+
+        public IActionResult Edit(int ? id)
+        {
+            if(id == null  )
+            {
+                return NotFound();
+            }
+            Category ? categoriesFromDb = _db.Categories.Find(id);
+            //Category ? categoriesFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
+            //Category ? categoriesFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
+
+            if(categoriesFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoriesFromDb);          
+        }
+
+        [HttpPost]
+
+        public IActionResult Edit(Category obj)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }
