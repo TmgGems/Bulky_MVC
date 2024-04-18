@@ -76,7 +76,7 @@ namespace BulkyWeb.Controllers
             return View();
         }
 
-        public IActionResult Delete(int? id)
+        public IActionResult Delete(int ? id)
         {
             if (id == null)
             {
@@ -92,24 +92,21 @@ namespace BulkyWeb.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeletePOST(int ? id)
+        public IActionResult DeletePOST(int? id)
         {
-            Category? category = _db.Categories.Find(id);
+            Category? obj = _db.Categories.Find(id);
 
-            if(id ==null)
+            if (obj == null)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
-                _db.Remove(id);
+                _db.Categories.Remove(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View();
-
 
         }
     }
