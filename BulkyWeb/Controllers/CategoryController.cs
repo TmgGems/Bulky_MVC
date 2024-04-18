@@ -14,7 +14,7 @@ namespace BulkyWeb.Controllers
         public IActionResult Index()
         {
             List<Category> objCategoryList = _db.Categories.ToList();
-            return View(objCategoryList);  
+            return View(objCategoryList);
         }
 
         public IActionResult Create()
@@ -25,9 +25,15 @@ namespace BulkyWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            _db.Categories.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index","Category");
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(obj);
+                _db.SaveChanges();
+                //return View("Index", _db.Categories.ToList());
+                return RedirectToAction("Index", "Category");
+            }
+            return View();
+
         }
     }
 }
