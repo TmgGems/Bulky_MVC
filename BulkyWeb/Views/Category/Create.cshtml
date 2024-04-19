@@ -11,11 +11,10 @@
     
     <div class="card-body p-4">
         <form method="post" class="row">
-            <div class="border p-3 mt-4">               
-                    <h2 class="text-primary">Create New Category</h2>                           
+            <div class="border p-3 mt-4">             
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-floating py-2 col-12">
-                    <input asp-for="Name"  class="form-control border-0 shadow" />
+                    <input asp-for="Name" class="form-control border-0 shadow" />
                     <label asp-for="Name " class="ms-2 "></label>
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
@@ -38,6 +37,11 @@
         </form>
     </div>
 </div>
+
+
+
+
+
 @section Scripts {
     @{
         <partial name="_ValidationScriptsPartial" />
