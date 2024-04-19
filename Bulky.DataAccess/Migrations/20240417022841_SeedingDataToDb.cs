@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BulkyWebRazor_Temp.Migrations
+namespace BulkyWeb.Migrations
 {
     /// <inheritdoc />
     public partial class SeedingDataToDb : Migration

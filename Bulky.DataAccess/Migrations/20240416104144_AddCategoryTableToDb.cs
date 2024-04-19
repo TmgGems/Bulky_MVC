@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BulkyWebRazor_Temp.Migrations
+namespace BulkyWeb.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

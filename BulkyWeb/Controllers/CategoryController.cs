@@ -1,8 +1,8 @@
-﻿using BulkyWebRazor_Temp.Data;
-using BulkyWebRazor_Temp.Models;
+﻿using BulkyWeb.Data;
+using BulkyWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BulkyWebRazor_Temp.Controllers
+namespace BulkyWeb.Controllers
 {
     public class CategoryController : Controller
     {
