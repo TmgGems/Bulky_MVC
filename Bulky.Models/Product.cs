@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bulky.Models
 {
-    internal class Product
+    public class Product
     {
         [Key]
         public int Id { get; set; }
@@ -21,22 +21,29 @@ namespace Bulky.Models
         [Required]
         public string ISBN { get; set; }
 
+
         [Required]
         public string Author { get; set; }
+
+        [Required]
+        [Display(Name = "Price for 1 - 50")]
+        [Range(1, 1000)]
+        public double ListPrice { get; set; }
+
         [Required]
         [Display(Name = "Price for 1 - 50")]
         [Range(1,1000)]
-        public double ListPrice {  get; set; }
+        public double Price {  get; set; }
 
         [Required]
         [Display(Name = "Price for 50 - 100")]
         [Range(1, 10000)]
-        public double ListPrice50 { get; set; }
+        public double Price50 { get; set; }
 
         [Required]
         [Display(Name = "Price above 1000")]
         [Range(1, 1000000)]
-        public double ListPrice100 { get; set; }
+        public double Price100 { get; set; }
 
     }
 }
